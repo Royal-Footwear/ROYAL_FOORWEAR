@@ -81,7 +81,7 @@ const plugins = [
   {
     resolve: 'medusa-payment-stripe',
     options: {
-      api_key: process.env.STRIPE_API_KEY,
+      api_key: process.env.STRIPE_API_KEY || pk_test_51P8jQ5Fu0eJ6Fz1QPi9XVRhgt8Ua8Dzh2NLoFk5DSzlcCvsN05GXx7BSx9bvlCk4CjN3MlzNZRI0rdnb7jPHRkwF00AXqvomG8,
       webhook_secret: process.env.STRIPE_WEBHOOK_SECRET,
     },
   },
@@ -197,6 +197,15 @@ const plugins = [
       bucket: process.env.MINIO_BUCKET,
       access_key_id: process.env.MINIO_ACCESS_KEY,
       secret_access_key: process.env.MINIO_SECRET_KEY,
+  },
+},
+
+{
+  resolve: `medusa-plugin-contentful`,
+  options: {
+    space_id: process.env.CONTENTFUL_SPACE_ID,
+    access_token: process.env.CONTENTFUL_ACCESS_TOKEN,
+    environment: process.env.CONTENTFUL_ENV,
   },
 },
 ]
