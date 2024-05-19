@@ -228,6 +228,8 @@ module.exports = {
     database_type: "postgres",
     store_cors: STORE_CORS,
     admin_cors: ADMIN_CORS,
+    NODE_ENV: "production",
+    NPM_CONFIG_PRODUCTION: false
   },
   plugins,
 };
